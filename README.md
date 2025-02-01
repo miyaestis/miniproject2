@@ -22,7 +22,6 @@ This project analyzes **Event-Related Potentials (ERP)** from **ECoG (Electrocor
 │── README.md                              # Project documentation
 ```
 
----
 
 ## **Installation & Setup**
 ### **1. Clone Repository**
@@ -43,8 +42,6 @@ source venv/bin/activate  # Mac/Linux
 venv\Scripts\activate    # Windows
 ```
 
----
-
 ## **Data Description**
 The project uses two key CSV files:
 - **brain_data_channel_one.csv**: Contains continuous **ECoG signals**.
@@ -52,7 +49,6 @@ The project uses two key CSV files:
 
 **Goal**: Extract **ERP signals** around each movement event and compute the **mean ERP per finger.**
 
----
 
 ## **Usage**
 ### **1. Run ERP Analysis**
@@ -73,7 +69,6 @@ python scripts/plot_erp.py
 ```
 The ERP plot will be saved as **results/erp_plot.png**.
 
----
 
 ## **Main Code (erp_analysis.py)**
 ```python
@@ -105,21 +100,15 @@ for i, start in enumerate(start_points):
 # Compute mean ERP
 fingers_erp_mean = np.array([np.mean(finger_trials[f], axis=0) for f in range(1, 6)])
 np.save("results/erp_mean_matrix.npy", fingers_erp_mean)
-```
 
----
 
 ## **Results**
 - The **ERP mean matrix** is saved in `results/erp_mean_matrix.npy`.
 - The **ERP plot** can be visualized using `plot_erp.py`.
 
----
 
 ## **Contributors**
 - **Miya Estis**
-- **Your Name Here**
-
----
 
 ## **Future Improvements**
 - Support for **multiple ECoG channels**.
